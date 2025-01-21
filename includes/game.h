@@ -21,8 +21,8 @@ typedef struct s_game
     int     y;                 // Y position
     int     player_x;          // Player's X position
     int     player_y;          // Player's Y position
-    int     player;            // Number of players (not used here, but part of the original structure)
-    int     exit;              // Exit status (whether it's reached or not)
+    int     player;            // Number of players
+    int     exit;              // Exit status
     int     coin;              // Number of coins
     void    *mlx;              // Pointer to the mlx instance
     void    *win;              // Pointer to the window
