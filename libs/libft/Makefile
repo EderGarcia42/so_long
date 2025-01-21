@@ -6,7 +6,7 @@
 #    By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 10:37:09 by edegarci          #+#    #+#              #
-#    Updated: 2024/12/02 16:10:12 by edegarci         ###   ########.fr        #
+#    Updated: 2025/01/20 16:01:32 by edegarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ SRCS =		ft_atoi.c\
 			ft_split.c\
 			ft_strdup_2d.c\
 			ft_free_2d.c\
-			get_next_line.c\
+			read_line.c\
 
 BONUSSRCS = ft_lstnew_bonus.c\
 			ft_lstadd_front_bonus.c\

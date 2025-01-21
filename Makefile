@@ -6,9 +6,14 @@
 #    By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 17:00:59 by edegarci          #+#    #+#              #
-#    Updated: 2024/12/02 17:52:57 by edegarci         ###   ########.fr        #
+#    Updated: 2025/01/20 17:34:03 by edegarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# Colors
+YELLOW		=	\033[0;33m
+GREEN		=	\033[0;32m
+NC			=	\033[0m
 
 DEL			=	rm -f
 CC			=	gcc
@@ -19,7 +24,7 @@ MLX			=	-lXext -lX11 -lm -lbsd
 NAME		=	so_long
 
 # Files
-SRC_FILES 	= main read_map validate_map validate_path utils
+SRC_FILES 	= main read_map validate_map validate_path utils init_game
 
 SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -46,7 +51,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 
 	@echo "$(YELLOW)Compiling: $<$(NC)"
 	@$(CC) $(CFLAGS) -o $@ -c $< 
-	@echo "$(YELLOW)Compiled!$(NC)"
+	@echo "$(GREEN)Compiled!$(NC)"
 
 # Compile libft library
 libft:

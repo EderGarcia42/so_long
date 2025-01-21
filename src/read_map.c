@@ -6,12 +6,16 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:20:59 by edegarci          #+#    #+#             */
-/*   Updated: 2024/12/05 14:40:18 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:25:03 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/map_parser.h"
 #include "../libs/libft/libft.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 static int	open_map_file(const char *path)
 {
@@ -32,29 +36,31 @@ static void	allocate_map(t_game *game)
 	if (!game->map)
 		ft_error(ERROR_08);
 }
-
 void	read_map(t_game *game)
 {
 	int		fd;
-	int		i;
 	char	*line;
+	int		i;
 
-	game->map = NULL;
 	fd = open_map_file(game->path);
 	allocate_map(game);
 	i = 0;
-	line = get_next_line(fd);
-	while (i < game->y && line)
+	line = read_line(fd);
+	while (line)
 	{
-		if (line[ft_strlen(line) - 1] == '\n')
-			line[ft_strlen(line) - 1] = '\0';
-		game->map[i] = line;
-		line = get_next_line(fd);
-		i++;
+		if (line[0] != '\0')
+		{
+			if (line[ft_strlen(line) - 1] == '\n')
+				line[ft_strlen(line) - 1] = '\0';
+			game->map[i++] = line;
+		}
+		else
+			free(line);
+		line = read_line(fd);
 	}
 	game->map[i] = NULL;
+	game->y = i;
 	close(fd);
-	print_map(game);
 }
 
 void	free_map(t_game *game)

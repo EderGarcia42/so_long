@@ -6,11 +6,14 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:42:12 by edegarci          #+#    #+#             */
-/*   Updated: 2024/12/05 15:14:42 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:39:02 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/map_parser.h"
+#include "../libs/libft/libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 int	count_lines(const char *path)
 {
@@ -22,12 +25,12 @@ int	count_lines(const char *path)
 	if (fd < 0)
 		ft_error(ERROR_07);
 	lines = 0;
-	line = get_next_line(fd);
+	line = read_line(fd);
 	while (line)
 	{
 		lines++;
 		free(line);
-		line = get_next_line(fd);
+		line = read_line(fd);
 	}
 	close(fd);
 	return (lines);

@@ -6,11 +6,13 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:21:11 by edegarci          #+#    #+#             */
-/*   Updated: 2024/12/05 15:14:32 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:16:49 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/map_parser.h"
+#include "../libs/libft/libft.h"
+#include <stdio.h>
 
 static int	find_player_position(t_game *game)
 {
@@ -25,8 +27,8 @@ static int	find_player_position(t_game *game)
 		{
 			if (game->map[i][j] == 'P')
 			{
-				game->x = j;
-				game->y = i;
+				game->player_x = j;
+				game->player_y = i;
 				return (1);
 			}
 			j++;
@@ -64,7 +66,7 @@ int	is_path_valid(t_game *game)
 		return (0);
 	components[0] = game->coin;
 	components[1] = 1;
-	flood_fill(map_copy, game->x, game->y, components);
+	flood_fill(map_copy, game->player_x, game->player_y, components);
 	ft_free_2d(map_copy);
 	return (components[0] == 0 && components[1] == 0);
 }

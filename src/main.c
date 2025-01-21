@@ -6,11 +6,17 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:20:55 by edegarci          #+#    #+#             */
-/*   Updated: 2024/12/05 15:14:56 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:25:39 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/map_parser.h"
+#include "../includes/so_long.h"
+#include "../libs/libft/libft.h"
+#include "../minilibx-linux/mlx.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 static int	handle_errors(t_game *game)
 {
@@ -41,6 +47,8 @@ int	main(int argc, char **argv)
 	if (handle_errors(&game))
 		return (1);
 	ft_putstr_fd(VALID_MAP, 1);
+	init_game(&game);
+	mlx_loop(game.mlx);
 	free_map(&game);
 	return (0);
 }

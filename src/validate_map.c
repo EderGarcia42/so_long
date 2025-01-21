@@ -6,11 +6,13 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:21:07 by edegarci          #+#    #+#             */
-/*   Updated: 2024/12/05 13:23:43 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/20 17:08:48 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/map_parser.h"
+#include "../libs/libft/libft.h"
+#include <stdio.h>
 
 int	is_rectangular(t_game *game)
 {
