@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:20:55 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/21 14:25:39 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/22 17:07:29 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 		return (1);
 	ft_putstr_fd(VALID_MAP, 1);
 	init_game(&game);
+	render_map(&game);
 	mlx_loop(game.mlx);
 	free_map(&game);
 	return (0);

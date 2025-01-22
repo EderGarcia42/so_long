@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:20:59 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/21 14:25:03 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/22 18:06:20 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static void	allocate_map(t_game *game)
 	if (!game->map)
 		ft_error(ERROR_08);
 }
+
 void	read_map(t_game *game)
 {
 	int		fd;
