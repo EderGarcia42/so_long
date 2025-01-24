@@ -6,14 +6,15 @@
 #    By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 17:00:59 by edegarci          #+#    #+#              #
-#    Updated: 2025/01/24 15:30:04 by edegarci         ###   ########.fr        #
+#    Updated: 2025/01/24 15:43:06 by edegarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Colors
-NC		=	\033[0m
+NC			=	\033[0m
 YELLOW		=	\033[0;33m
 GREEN		=	\033[0;32m
+
 
 DEL			=	rm -f
 CC			=	gcc
