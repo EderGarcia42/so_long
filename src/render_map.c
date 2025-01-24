@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 14:03:12 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/22 18:06:38 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/24 15:00:10 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,5 @@ void	render_map(t_game *game)
 		}
 		y++;
 	}
+	render_tile(game, game->player_x, game->player_y, 'P');
 }

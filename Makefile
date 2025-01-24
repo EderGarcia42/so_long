@@ -6,7 +6,7 @@
 #    By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 17:00:59 by edegarci          #+#    #+#              #
-#    Updated: 2025/01/22 16:36:03 by edegarci         ###   ########.fr        #
+#    Updated: 2025/01/24 15:30:04 by edegarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,17 @@ MLX			=	-lXext -lX11 -lm -lbsd
 NAME		=	so_long
 
 # Files
-SRC_FILES 	= main read_map validate_map validate_path utils init_game render_map
+SRC_FILES =	main \
+ 			read_map \
+ 			validate_map \
+ 			validate_path \
+ 			utils \
+ 			init_game \
+ 			render_map \
+ 			handle_keypress \
+ 			handle_exit \
+ 			move_player \
+			collected_coins
 
 SRC 		= $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ 		= $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

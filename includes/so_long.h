@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:12:55 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/22 17:04:02 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/24 15:18:19 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+# define KEY_ESC 65307
+
 # define TILE_SIZE 100
 # define WINDOW_TITLE "so_long"
 
@@ -28,7 +34,10 @@ void		init_game(t_game *game);
 void		render_tile(t_game *game, int x, int y, char tile);
 void		render_map(t_game *game);
 static char	*get_texture_path(char tile);
-/* int			handle_keypress(int keycode, t_game *game);
-int			handle_exit(t_game *game); */
+void		move_player(t_game *game, int dx, int dy);
+int			handle_keypress(int keycode, t_game *game);
+int			handle_exit(t_game *game);
+int			collected_coins(t_game *game, int y, int x);
+void		handle_tile_event(t_game *game, int dx, int dy);
 
 #endif
