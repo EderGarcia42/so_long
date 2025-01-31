@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:20:55 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/24 12:49:36 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/31 13:37:16 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	main(int argc, char **argv)
 	game.player = 0;
 	game.exit = 0;
 	game.coin = 0;
+	game.collected_coins = 0;
 	read_map(&game);
 	if (handle_errors(&game))
 		return (1);

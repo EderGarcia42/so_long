@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 13:49:01 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/24 14:28:11 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:35:57 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 #include "../libs/libft/libft.h"
 #include "../minilibx-linux/mlx.h"
 
-int	collected_coins(t_game *game, int y, int x)
+int	collected_coins(t_game *game)
 {
 	int	i;
 	int	j;
 
 	i = 0;
+	j = 0;
 	while (i < game->y)
 	{
 		j = 0;
-		while (j < ft_strlen(game->map[i]))
+		while (game->map[i][j] != '\0')
 		{
 			if (game->map[i][j] == 'C')
 				return (0);

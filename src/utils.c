@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:42:12 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/21 14:39:02 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:43:24 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,48 @@ int	count_lines(const char *path)
 	}
 	close(fd);
 	return (lines);
+}
+
+void	count_coins(t_game *game)
+{
+	int	x;
+	int	y;
+
+	game->total_coins = 0;
+	y = 0;
+	while (game->map[y])
+	{
+		x = 0;
+		while (game->map[y][x])
+		{
+			if (game->map[y][x] == 'C')
+				game->total_coins++;
+			x++;
+		}
+		y++;
+	}
+}
+
+void	count_total_coins(t_game *game)
+{
+	int	i;
+	int	j;
+
+	game->total_coins = 0;
+	i = 0;
+	while (i < game->y)
+	{
+		j = 0;
+		while (j < ft_strlen(game->map[i]))
+		{
+			if (game->map[i][j] == 'C')
+			{
+				game->total_coins++;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
 void	print_map(t_game *game)

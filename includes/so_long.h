@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:12:55 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/24 15:18:19 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:24:55 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*get_texture_path(char tile);
 void		move_player(t_game *game, int dx, int dy);
 int			handle_keypress(int keycode, t_game *game);
 int			handle_exit(t_game *game);
-int			collected_coins(t_game *game, int y, int x);
+int			collected_coins(t_game *game);
 void		handle_tile_event(t_game *game, int dx, int dy);
 
 #endif

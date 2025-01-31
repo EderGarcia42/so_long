@@ -6,7 +6,7 @@
 #    By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 10:37:09 by edegarci          #+#    #+#              #
-#    Updated: 2025/01/20 16:01:32 by edegarci         ###   ########.fr        #
+#    Updated: 2025/01/24 16:23:40 by edegarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 CC = cc
 
-CCFLAGS = -Wall -Wextra -Werror
+CCFLAGS = -Wall -Wextra -Werror -fPIC
 
 RM = rm -rf
 
@@ -88,4 +88,3 @@ re: fclean all
 
 bonus: $(OBJS) $(BONUSSRCS:.c=.o)
 	@ar crs $(NAME) $(OBJS) $(BONUSSRCS:.c=.o)
-
