@@ -6,7 +6,7 @@
 #    By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/19 17:00:59 by edegarci          #+#    #+#              #
-#    Updated: 2025/01/24 16:16:57 by edegarci         ###   ########.fr        #
+#    Updated: 2025/02/03 15:48:24 by edegarci         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ NAME		=	so_long
 
 # Files
 SRC_FILES =	main \
+			read_line \
  			read_map \
  			validate_map \
  			validate_path \

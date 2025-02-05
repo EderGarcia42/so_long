@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 12:54:18 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/24 18:40:42 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:00:30 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,14 @@ void	move_player(t_game *game, int dx, int dy)
 
 	new_x = game->player_x + dx;
 	new_y = game->player_y + dy;
-	if (game->map[new_y][new_x] != '1')
+	if (new_x >= 0 && new_x < game->map_width && new_y >= 0
+		&& new_y < game->map_height && game->map[new_y][new_x] != '1')
 	{
 		if (game->ondoor == 1)
-		{
 			game->map[game->player_y][game->player_x] = 'E';
-			game->ondoor = 0;
-		}
 		else
 			game->map[game->player_y][game->player_x] = '0';
+		game->ondoor = 0;
 		game->player_x = new_x;
 		game->player_y = new_y;
 		handle_tile_event(game, dx, dy);

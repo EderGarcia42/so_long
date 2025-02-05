@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:21:07 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/31 13:36:23 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:00:06 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ int	is_rectangular(t_game *game)
 	if (!game || !game->map || !game->map[0])
 		return (0);
 	len = ft_strlen(game->map[0]);
-	i = 1;
+	i = 0;
 	while (game->map[i])
 	{
+		if (ft_strlen(game->map[i]) == 0)
+			return (0);
 		if ((int)ft_strlen(game->map[i]) != len)
 			return (0);
 		i++;
@@ -35,15 +37,29 @@ int	is_rectangular(t_game *game)
 int	is_surrounded_by_walls(t_game *game)
 {
 	int	i;
-	int	len;
+	int	j;
+	int	rows;
+	int	cols;
 
-	len = 0;
-	while (game->map[0][len] == '1')
-		len++;
+	if (!game || !game->map || !game->map[0])
+		return (0);
+	rows = game->y;
+	cols = ft_strlen(game->map[0]);
+	if (cols == 0)
+		return (0);
 	i = -1;
-	while (game->map[++i])
-		if (game->map[i][0] != '1' || game->map[i][len - 1] != '1')
+	while (++i < cols)
+	{
+		if (game->map[0][i] != '1' || game->map[rows - 1][i] != '1')
 			return (0);
+	}
+	i = -1;
+	while (++i < rows)
+	{
+		if (ft_strlen(game->map[i]) == 0 || game->map[i][0] != '1'
+			|| game->map[i][cols - 1] != '1')
+			return (0);
+	}
 	return (1);
 }
 
@@ -77,5 +93,28 @@ int	validate_components(t_game *game)
 	}
 	if (game->player != 1 || game->exit != 1 || game->coin < 1)
 		return (0);
+	return (1);
+}
+
+int	validate_map(t_game *game)
+{
+	int	i;
+
+	i = 0;
+	while (game->map[i])
+	{
+		if (ft_strlen(game->map[i]) == 0)
+		{
+			ft_putstr_fd(ERROR_18, 2);
+			return (0);
+		}
+		i++;
+	}
+	if (!is_rectangular(game) || !is_surrounded_by_walls(game)
+		|| !validate_components(game))
+	{
+		ft_putstr_fd(MAP_ERROR, 2);
+		return (0);
+	}
 	return (1);
 }

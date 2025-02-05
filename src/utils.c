@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 17:42:12 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/24 18:43:24 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:12:00 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	count_lines(const char *path)
 	line = read_line(fd);
 	while (line)
 	{
-		lines++;
+		if (line[0] != '\0')
+			lines++;
 		free(line);
 		line = read_line(fd);
 	}
@@ -89,4 +90,10 @@ void	print_map(t_game *game)
 		ft_putchar_fd('\n', 1);
 		i++;
 	}
+}
+
+void	ft_error(char *msg)
+{
+	ft_putstr_fd(msg, 2);
+	exit(1);
 }

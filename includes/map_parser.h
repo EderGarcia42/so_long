@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:20:47 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/31 13:36:43 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:49:17 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@
 # define ERROR_15 RED "\nError:\nFailed to load exit image\n" NC
 # define ERROR_16 RED "\nError:\nFailed to load wall image\n" NC
 # define ERROR_17 RED "\nError:\nFailed to load floor image\n" NC
+# define ERROR_18 RED "\nError:\nMap contains empty line\n" NC
 # define VALID_MAP GREEN "\nLoading map...\nThe map is valid!\n" NC
 # define MOVES YELLOW "\nTotal moves:\n" NC
 # define COINS GREEN "\nTotal food eaten:\n" NC
@@ -54,9 +55,9 @@
 static int	open_map_file(const char *path);
 static void	allocate_map(t_game *game);
 void		read_map(t_game *game);
+char		*read_line(int fd);
 void		free_map(t_game *game);
 void		ft_error(char *msg);
-char		*read_line(int fd);
 int			is_rectangular(t_game *game);
 int			is_surrounded_by_walls(t_game *game);
 int			is_valid_char(char c);
@@ -70,5 +71,7 @@ void		count_total_coins(t_game *game);
 void		print_map(t_game *game);
 void		free_resources(t_game *game);
 int			handle_exit(t_game *game);
+static void	init_game_struct(t_game *game);
+int			validate_map(t_game *game);
 
 #endif
