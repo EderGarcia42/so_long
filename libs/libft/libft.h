@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:00:17 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/20 18:35:08 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:44:34 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ char				*ft_itoa(int n);
 char				**ft_split(char const *s, char c);
 char				**ft_strdup_2d(char **map);
 void				ft_free_2d(char **map);
-char				*read_line(int fd);
 
 typedef struct s_list
 {
