@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:20:55 by edegarci          #+#    #+#             */
-/*   Updated: 2025/02/03 14:33:19 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/06 14:37:49 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,6 @@ int	main(int argc, char **argv)
 	free_resources(&game);
 	return (0);
 }
+
+// Minilibx-linux
+/* https://github.com/42Paris/minilibx-linux.git */

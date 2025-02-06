@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 12:33:14 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/24 14:32:24 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/06 14:37:47 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 int	handle_keypress(int keycode, t_game *game)
 {
 	game->map[game->player_y][game->player_x] = '0';
-	if (keycode == KEY_W)
+	if (keycode == KEY_W || keycode == KEY_UP)
 		move_player(game, 0, -1);
-	else if (keycode == KEY_S)
+	else if (keycode == KEY_S || keycode == KEY_DOWN)
 		move_player(game, 0, 1);
-	else if (keycode == KEY_A)
+	else if (keycode == KEY_A || keycode == KEY_LEFT)
 		move_player(game, -1, 0);
-	else if (keycode == KEY_D)
+	else if (keycode == KEY_D || keycode == KEY_RIGHT)
 		move_player(game, 1, 0);
 	else if (keycode == KEY_ESC)
 		handle_exit(game);

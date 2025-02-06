@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 17:12:55 by edegarci          #+#    #+#             */
-/*   Updated: 2025/01/24 18:24:55 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/06 14:38:01 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@
 # define KEY_S 115
 # define KEY_D 100
 # define KEY_ESC 65307
+# define KEY_UP 65362
+# define KEY_DOWN 65364
+# define KEY_LEFT 65361
+# define KEY_RIGHT 65363
 
 # define TILE_SIZE 100
 # define WINDOW_TITLE "so_long"
