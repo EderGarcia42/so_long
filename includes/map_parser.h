@@ -6,7 +6,7 @@
 /*   By: edegarci <edegarci@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:20:47 by edegarci          #+#    #+#             */
-/*   Updated: 2025/02/03 15:49:17 by edegarci         ###   ########.fr       */
+/*   Updated: 2025/02/06 11:56:09 by edegarci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,35 +22,30 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define NC "\033[0m"
-# define RED "\033[31m"
-# define GREEN "\033[32m"
-# define YELLOW "\033[33m"
-
-# define MAP_ERROR RED "\nError:\nInvalid map format or configuration\n" NC
-# define ERROR_01 RED "\nError:\nUsage: ./so_long <map_file>\n" NC
-# define ERROR_02 RED "\nError:\nCould not read the map\n" NC
-# define ERROR_03 RED "\nError:\nIs not rectangular\n" NC
-# define ERROR_04 RED "\nError:\nIs not surrounded by walls\n" NC
-# define ERROR_05 RED "\nError:\nDoes not contain the required components\n" NC
-# define ERROR_06 RED "\nError:\nThere is no valid path in the map\n" NC
-# define ERROR_07 RED "\nError:\nProblem to open the map\n" NC
-# define ERROR_08 RED "\nError:\nMemory allocation error\n" NC
-# define ERROR_09 RED "\nError:\nLine is empty\n" NC
-# define ERROR_10 RED "\nError:\nFailed to initialize MiniLibX\n" NC
-# define ERROR_11 RED "\nError:\nFailed to create a new window\n" NC
-# define ERROR_12 RED "\nError:\nFailed to load image\n" NC
-# define ERROR_13 RED "\nError:\nFailed to load player image\n" NC
-# define ERROR_14 RED "\nError:\nFailed to load coin image\n" NC
-# define ERROR_15 RED "\nError:\nFailed to load exit image\n" NC
-# define ERROR_16 RED "\nError:\nFailed to load wall image\n" NC
-# define ERROR_17 RED "\nError:\nFailed to load floor image\n" NC
-# define ERROR_18 RED "\nError:\nMap contains empty line\n" NC
-# define VALID_MAP GREEN "\nLoading map...\nThe map is valid!\n" NC
-# define MOVES YELLOW "\nTotal moves:\n" NC
-# define COINS GREEN "\nTotal food eaten:\n" NC
-# define WIN GREEN "\n\nYOU ATE ALL THE FOOD!\nCONGRATULATIONS!\nClosing map...\n" NC
-# define WARNING RED "\n\nWAIT!!!\nYou need to eat all the food first!\n" NC
+# define MAP_ERROR "\nError:\nInvalid map format or configuration\n"
+# define ERROR_01 "\nError:\nUsage: ./so_long <map_file>\n"
+# define ERROR_02 "\nError:\nCould not read the map\n"
+# define ERROR_03 "\nError:\nIs not rectangular\n"
+# define ERROR_04 "\nError:\nIs not surrounded by walls\n"
+# define ERROR_05 "\nError:\nDoes not contain the required components\n"
+# define ERROR_06 "\nError:\nThere is no valid path in the map\n"
+# define ERROR_07 "\nError:\nProblem to open the map\n"
+# define ERROR_08 "\nError:\nMemory allocation error\n"
+# define ERROR_09 "\nError:\nLine is empty\n"
+# define ERROR_10 "\nError:\nFailed to initialize MiniLibX\n"
+# define ERROR_11 "\nError:\nFailed to create a new window\n"
+# define ERROR_12 "\nError:\nFailed to load image\n"
+# define ERROR_13 "\nError:\nFailed to load player image\n"
+# define ERROR_14 "\nError:\nFailed to load coin image\n"
+# define ERROR_15 "\nError:\nFailed to load exit image\n"
+# define ERROR_16 "\nError:\nFailed to load wall image\n"
+# define ERROR_17 "\nError:\nFailed to load floor image\n"
+# define ERROR_18 "\nError:\nMap contains empty line\n"
+# define VALID_MAP "\nLoading map...\nThe map is valid!\n"
+# define MOVES "\nTotal moves:\n"
+# define COINS "\nTotal food eaten:\n"
+# define WIN "\n\nYOU ATE ALL THE FOOD!\nCONGRATULATIONS!\nClosing map...\n"
+# define WARNING "\n\nWAIT!!!\nYou need to eat all the food first!\n"
 
 static int	open_map_file(const char *path);
 static void	allocate_map(t_game *game);
